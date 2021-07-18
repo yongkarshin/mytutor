@@ -1,0 +1,173 @@
+    return Container(
+        child: Column(
+      children: <Widget>[
+        Row(children: <Widget>[
+          SizedBox(
+            width: 6,
+          ),
+          Expanded(
+            child: Text('Lesson Location',
+                style: TextStyle(fontSize: 15, color: Colors.black)),
+          ),
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                _isHideValue1 = !_isHideValue1;
+              });
+            },
+            child: Icon(
+              _isHideValue1
+                  ? Icons.keyboard_arrow_down
+                  : Icons.keyboard_arrow_up,
+              color: Colors.grey,
+            ),
+          ),
+          SizedBox(
+            width: 6,
+          ),
+        ]),
+        //_typeGridWidget(_value),
+        Visibility(
+            visible: _isHideValue1,
+            child: Padding(
+              padding: EdgeInsets.all(5),
+              child: Column(children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      width: screenWidth / 3,
+                      child: FlatButton(
+                         color: _isSelected1?Colors.grey[300] :Colors.grey[100],
+                          onPressed: (){
+                              setState((){
+                              if(!_isSelected1){
+                                _selectedItems.add("Tutor's House");
+                                _isSelected1=true;
+                                //myColor=Colors.blue;
+                              }else{
+                                _selectedItems.remove("Tutor's House");
+                                _isSelected1=false;
+                                //myColor=Colors.red;
+                              }
+                              
+                             print(_selectedItems);
+                            });
+                            
+                          },
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            // Replace with a Row for horizontal icon + text
+                            children: <Widget>[
+                              Text(
+                                "Tutor's House",
+                                style: TextStyle(color: Colors.black),
+                              )
+                            ],
+                          )),
+                    ),
+                    Container(
+                      width: screenWidth / 3,
+                      child: FlatButton(
+                          color: _isSelected2?Colors.grey[300] :Colors.grey[100],
+                          onPressed: (){
+                              setState((){
+                              if(!_isSelected2){
+                                _selectedItems.add("Student's House");
+                                _isSelected2=true;
+                                //myColor=Colors.blue;
+                              }else{
+                                _selectedItems.remove("Student's House");
+                                _isSelected2=false;
+                                //myColor=Colors.red;
+                              }
+                              
+                             print(_selectedItems);
+                            });
+                            
+                          },
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            // Replace with a Row for horizontal icon + text
+                            children: <Widget>[
+                              Text(
+                                "Student's House",
+                                style: TextStyle(color: Colors.black),
+                              )
+                            ],
+                          )),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Container(
+                      width: screenWidth / 3,
+                      child: FlatButton(
+                          color: _isSelected3?Colors.grey[300] :Colors.grey[100],
+                          onPressed: (){
+
+                            setState((){
+                              if(!_isSelected3){
+                                _selectedItems.add("Neutral Location");
+                                _isSelected3=true;
+                                //myColor=Colors.blue;
+                              }else{
+                                _selectedItems.remove("Neutral Location");
+                                _isSelected3=false;
+                                //myColor=Colors.red;
+                              }
+                              
+                             print(_selectedItems);
+                            });
+                            
+                          },
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            // Replace with a Row for horizontal icon + text
+                            children: <Widget>[
+                              Text(
+                                "Neutral Location",
+                                style: TextStyle(color: Colors.black),
+                              )
+                            ],
+                          )),
+                    ),
+                    Container(
+                      width: screenWidth / 3,
+                      child: FlatButton(
+                          color: _isSelected4?Colors.grey[300] :Colors.grey[100],
+                          onPressed: (){
+                            setState((){
+                              if(!_isSelected4){
+                                _selectedItems.add("Online Tutoring");
+                                _isSelected4=true;
+                                //myColor=Colors.blue;
+                              }else{
+                                _selectedItems.remove("Online Tutoring");
+                                _isSelected4=false;
+                                //myColor=Colors.red;
+                              }
+                              
+                             print(_selectedItems);
+                            });
+                            
+                          },
+                          padding: EdgeInsets.all(10.0),
+                          child: Column(
+                            // Replace with a Row for horizontal icon + text
+                            children: <Widget>[
+                              Text(
+                                "Online Tutoring",
+                                style: TextStyle(color: Colors.black),
+                              )
+                            ],
+                          )),
+                    ),
+                  ],
+                )
+              ]),
+            ))
+      ],
+    ));

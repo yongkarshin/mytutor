@@ -1,0 +1,147 @@
+//Text(widget.tutor.tutorid),
+                TextField(
+                    controller: _subjectCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Subject', icon: Icon(Icons.book))),
+                TextField(
+                    controller: _levelCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Level', icon: Icon(Icons.equalizer))),
+                SizedBox(
+                  height: 10,
+                ),
+                TextField(
+                    controller: _taughtLanguageCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Taught Language',
+                        icon: Image.asset("assets/images/language.png",
+                            width: 25, height: 25, color: Colors.grey[600]))),
+                
+                TextField(
+                    controller: _priceCon,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                        labelText: 'Price (RM)',
+                        icon: Image.asset("assets/images/rm2.png",
+                            width: 25, height: 25, color: Colors.grey[600]))),
+                TextField(
+                    controller: _durationCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Duration (Min)', icon: Icon(Icons.timer))),
+                TextField(
+                    controller: _totalClassCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Total Class',
+                        icon: Image.asset("assets/images/class.png",
+                            width: 25, height: 25, color: Colors.grey[600]))),
+                TextField(
+                    controller: _quantityCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Quantity', icon: Icon(Icons.event_seat))),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                    height: 30,
+                    child: Row(
+                      children: [
+                        //Icon(Icons.location_on),
+                        Tab(icon: Icon(Icons.pin_drop)),
+
+                        SizedBox(
+                          width: 5,
+                        ),
+                        new Radio(
+                            value: 0,
+                            groupValue: _radioValue,
+                            onChanged: _handleRadioValueChange),
+                        new Text("Neutral Location"),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        new Radio(
+                            value: 1,
+                            groupValue: _radioValue,
+                            onChanged: _handleRadioValueChange),
+                        new Text("Tutors House"),
+                      ],
+                    )),
+                Container(
+                    height: 30,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 29,
+                        ),
+                        new Radio(
+                            value: 2,
+                            groupValue: _radioValue,
+                            onChanged: _handleRadioValueChange),
+                        new Text("Students House"),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        new Radio(
+                            value: 3,
+                            groupValue: _radioValue,
+                            onChanged: _handleRadioValueChange),
+                        new Text("Online Tutoring"),
+                      ],
+                    )),
+                /*TextField(
+                    controller: _lessonLocationCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'lessonLocation',
+                        icon: Icon(Icons.pin_drop))),*/
+
+                SizedBox(
+                  height: 6,
+                ),
+                SizedBox(height: 15),
+                Container(
+                    height: 30,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          child: Icon(Icons.gps_fixed),
+                          onTap: _searchCurLoc,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          gmaploc,
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ],
+                    )),
+                    
+                TextField(
+                    controller: _addressCon,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        labelText: 'Address', icon: Icon(Icons.location_on))),
+                SizedBox(height: 10),
+                MaterialButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                    minWidth: 300,
+                    height: 50,
+                    child: Text('Add New Class',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    color: Color.fromRGBO(14, 30, 64, 1),
+                    //textColor: Colors.blue,
+                    elevation: 10,
+                    onPressed: newClassDialog),
+                SizedBox(height: 10),

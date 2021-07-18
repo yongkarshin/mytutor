@@ -1,0 +1,33 @@
+class ClassTutor {
+  String classid,
+      subject,
+      level,
+      taughtlanguage,
+      date,
+      time,
+      price,
+      duration,
+      totalclass,
+      quantity,
+      balance,
+      lessonlocation,
+      longitude,
+      latitude,
+      address;
+  ClassTutor(
+      {this.classid,
+      this.subject,
+      this.level,
+      this.taughtlanguage,
+      this.date,
+      this.time,
+      this.price,
+      this.duration,
+      this.totalclass,
+      this.quantity,
+      this.balance,
+      this.lessonlocation,
+      this.longitude,
+      this.latitude,
+      this.address});
+}
